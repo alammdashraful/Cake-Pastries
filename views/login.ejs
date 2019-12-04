@@ -71,7 +71,7 @@
 	                        Login Here
 	                    </h1>
 	                    <p class="text-white link-nav"><a href="/">Home </a> <span class="lnr lnr-arrow-right"></span> <a
-	                            href="/login"> Login</a></p>
+	                            href="/users/login"> Login</a></p>
 	                </div>
 	            </div>
 	        </div>
@@ -115,15 +115,12 @@
 	                    </div>
 	                </div>
 	                <div class="col-lg-8">
-	                    <form class="form-area " action="/login" method="POST"
+	                    <form class="form-area " action="/users/login" method="POST"
                             class="contact-form text-right">
-                            <% if(messages.error){ %>
-                                <h3><%= messages.error%></h3>
-                            <% } %>
+                            <%-include("./partials/messages")-%>
 	                        <div class="row">
 	                            <div class="col-lg-6 form-group">
 	                                <input name="email" placeholder="Enter email address"
-	                                    pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
 	                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"
 	                                    class="common-input mb-20 form-control" required="" type="email">
 
@@ -135,7 +132,7 @@
 	                                <div class="alert-msg" style="text-align: left;"></div>
 	                                <button type="submit" class="genric-btn primary"
 	                                    style="float: right; margin-right:448px;">Go</button>
-	                                <a href="/register" class="genric-btn primary"
+	                                <a href="/users/register" class="genric-btn primary"
 	                                    style="float: right;margin-left: 50px">Register</a>
 	                            </div>
 	                        </div>
